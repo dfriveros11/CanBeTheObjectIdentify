@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 
 const MongoUtils = require("../db/MongoUtils.js");
-const mu = MongoUtils;
+const mu = MongoUtils();
 
 /* GET home page. */
 router.get("/getTest", function(req, res, next) {
