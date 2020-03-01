@@ -11,37 +11,36 @@ async function startGame() {
   try {
     let camera = await getVideo();
 
+    let timeOUT = 1000;
+    setTimeout(function() {}, timeOUT);
+
     const image = document.createElement("img");
-    image.setAttribute("src", images[0]);
     image.setAttribute("className", "images");
-
-    document.getElementById("main").innerHTML = "";
-
-    document.getElementById("main").appendChild(image);
 
     //Change images every second
     setTimeout(function() {
-      const image = document.createElement("img");
-      image.setAttribute("src", images[1]);
-      image.setAttribute("className", "images");
+      image.setAttribute("src", images[0]);
       document.getElementById("main").innerHTML = "";
       document.getElementById("main").appendChild(image);
-    }, 1000);
+    }, timeOUT + 1000);
 
     setTimeout(function() {
-      const image = document.createElement("img");
-      image.setAttribute("className", "images");
+      image.setAttribute("src", images[1]);
+      document.getElementById("main").innerHTML = "";
+      document.getElementById("main").appendChild(image);
+    }, timeOUT + 2000);
+
+    setTimeout(function() {
       image.setAttribute("src", images[2]);
       document.getElementById("main").innerHTML = "";
       document.getElementById("main").appendChild(image);
-    }, 2000);
+    }, timeOUT + 3000);
 
     setTimeout(function() {
-      const image = document.createElement("img");
       image.setAttribute("src", images[3]);
       document.getElementById("main").innerHTML = "";
       document.getElementById("main").appendChild(image);
-    }, 3000);
+    }, timeOUT + 4000);
 
     //Start the game
     setTimeout(function() {
@@ -51,7 +50,7 @@ async function startGame() {
       //eliminar el div
       const removeDiv = document.getElementById("main");
       removeDiv.remove();
-    }, 3000);
+    }, timeOUT + 5000);
   } catch (error) {
     intentos++;
     console.log(error);
@@ -75,7 +74,6 @@ async function startGame() {
 async function getVideo() {
   this.videoElement = document.querySelector("video");
   this.snapShotCanvas = document.createElement("canvas");
-  console.log("VIDEO", this.videoElement.videoWidth);
   if (
     navigator.mediaDevices.getUserMedia ||
     navigator.mediaDevices.webkitGetUserMedia
@@ -120,6 +118,7 @@ async function getVideo() {
   return null;
 }
 
+//Load Spinner
 function loadImage() {
   const div = document.createElement("div");
   div.setAttribute("class", "d-flex justify-content-center");
@@ -131,6 +130,7 @@ function loadImage() {
   document.getElementById("main").appendChild(div);
 }
 
+//Detect the video frama
 function detectFromVideoFrame(model, video) {
   model.detect(video).then(
     predictions => {
@@ -147,6 +147,7 @@ function detectFromVideoFrame(model, video) {
   );
 }
 
+//Draw the predictions in the canvas tag
 function showDetections(predictions) {
   const ctx = this.snapShotCanvas.getContext("2d");
   ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
@@ -169,12 +170,13 @@ function showDetections(predictions) {
     const textHeight = parseInt(font, 10);
     // draw top left rectangle
     ctx.fillRect(x, y, textWidth + 10, textHeight + 10);
-    // draw bottom left rectangle
-    ctx.fillRect(x, y + height - textHeight, textWidth + 15, textHeight + 10);
+    /*draw the background of the percentage exactitud
+    ctx.fillRect(x, y + height - textHeight, textWidth + 15, textHeight + 10);*/
 
     // Draw the text last to ensure it's on top.
     ctx.fillStyle = "#000000";
     ctx.fillText(prediction.class, x, y);
-    ctx.fillText(prediction.score.toFixed(2), x, y + height - textHeight);
+    /*    Draw the percentage of the prediction exactitud
+    ctx.fillText(prediction.score.toFixed(2), x, y + height - textHeight);*/
   });
 }
