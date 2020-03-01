@@ -149,8 +149,9 @@ function showDetections(predictions) {
   ctx.textBaseline = "top";
 
   predictions.forEach(prediction => {
+    //Get Prediction Class name
     const className = prediction.class;
-    console.log(className);
+    /*fetch("/addScore")*/
     const x = prediction.bbox[0];
     const y = prediction.bbox[1];
     const width = prediction.bbox[2];
