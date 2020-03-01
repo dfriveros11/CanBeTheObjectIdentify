@@ -1,14 +1,14 @@
-# CanBeTheObjectIdentify
+# CanBeTheObjectIdentify  :boom:
 ## Description
 
 We wanted to do a game in which the people have an approcha with image classification. People can put different objects to the webcam and check if is detect or not. 
 
-## Authors
+## Authors 
 
-- [Diego Riveros](https://dfriveros11.github.io/DiegoRiverosWebPage/)
-- [Laura Pardo](https://laupardo.github.io/index.html)
+- [Diego Riveros](https://dfriveros11.github.io/DiegoRiverosWebPage/)  :man:
+- [Laura Pardo](https://laupardo.github.io/index.html)   :girl:
 
-## Check the page
+## Check the page  :sunglasses:
 [Link]()
 
 ## Deployment
