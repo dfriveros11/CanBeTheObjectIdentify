@@ -3,8 +3,7 @@ let intentos = 0;
 const images = [
   "../images/image3.jpg",
   "../images/image2.jpg",
-  "../images/image1.jpg",
-  "../images/image4John.jpg"
+  "../images/image1.jpg"
 ];
 
 async function startGame() {
@@ -35,12 +34,6 @@ async function startGame() {
       document.getElementById("main").innerHTML = "";
       document.getElementById("main").appendChild(image);
     }, timeOUT + 3000);
-
-    setTimeout(function() {
-      image.setAttribute("src", images[3]);
-      document.getElementById("main").innerHTML = "";
-      document.getElementById("main").appendChild(image);
-    }, timeOUT + 4000);
 
     //Start the game
     setTimeout(function() {
@@ -156,6 +149,8 @@ function showDetections(predictions) {
   ctx.textBaseline = "top";
 
   predictions.forEach(prediction => {
+    const className = prediction.class;
+    console.log(className);
     const x = prediction.bbox[0];
     const y = prediction.bbox[1];
     const width = prediction.bbox[2];
@@ -166,7 +161,7 @@ function showDetections(predictions) {
     ctx.strokeRect(x, y, width, height);
     // Draw the label background.
     ctx.fillStyle = "#2fff00";
-    const textWidth = ctx.measureText(prediction.class).width;
+    const textWidth = ctx.measureText(className).width;
     const textHeight = parseInt(font, 10);
     // draw top left rectangle
     ctx.fillRect(x, y, textWidth + 10, textHeight + 10);
