@@ -22,7 +22,6 @@ function MongoUtils() {
     console.log("Trying to connect");
     let url;
     if (user === undefined) {
-      console.log("VERGA");
       url = process.env.MONGODB_URI;
     } else {
       url = `mongodb://${user}:${pwd}@${hostname}:${port}`;
