@@ -13,8 +13,8 @@ We wanted to do a game in which the people have an approcha with image classific
 
 ## Prerequisites
 In order to deploy the page locally, you should have the following technologies install if you don't have installed just click on the name and you will be redirected to the dowloand page:
-- [Nodejs] (https://nodejs.org/es/download/)
-- [Mongodb] (https://www.mongodb.com/download-center/community) or [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+- [Nodejs](https://nodejs.org/es/download/)
+- [Mongodb](https://www.mongodb.com/download-center/community) or [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 
 
 ## Deployment
