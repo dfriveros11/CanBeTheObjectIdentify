@@ -11,19 +11,28 @@ We wanted to do a game in which the people have an approcha with image classific
 ## Check the page  :sunglasses:
 [Link](https://canbetheobjectidentify.herokuapp.com/)
 
+## Prerequisites
+In order to deploy the page locally, you should have the following technologies install if you don't have installed just click on the name and you will be redirected to the dowloand page:
+- [Nodejs] (https://nodejs.org/es/download/)
+- [Mongodb] (https://www.mongodb.com/download-center/community) or [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+
+
 ## Deployment
-To deploy the page locally, it's neccesary to clone or download the repository. To run this repository is neccesary to install npm and yarn. Then, run the following command:
+Enter in the root folder of the proyect and run the following commands: 
 
 ```
+ # Install dependencies for server
+ yarn install
+ 
+ # Add mongodb to yarn
  yarn add mongodb
 ```
-Almost there!!! Now, you need to have a Mongo database to connect.
+Almost there!!!.
 
 ### Windows
 
 ### Ubuntu
-You can dowload docker for [here](https://docs.docker.com/install/linux/docker-ce/ubuntu/).
-After dowloaning docker, run the next command:
+Create the image to mongodb with the name some-mongo with user mongoadmin and password secet:
 ```
 docker run -d --name some-mongo -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=secret mongo:4.0.4
 ```
@@ -36,7 +45,7 @@ Before running the project, remember to set the variables by running the next co
 export MONGO_USER=mongoadmin
 export MONGO_PWD=secret
 ```
-Now, all you have to do, is to be inside the CanBeTheObjectIdentify folder and run: 
+Now, all you have to do, is to be inside the root folder of the project and run: 
 ```
 yarn start
 ```
