@@ -1,5 +1,7 @@
 const MongoClient = require("mongodb").MongoClient;
 
+console.log("holi");
+
 //Connect to mongo
 function MongoUtils() {
   const mu = {};
