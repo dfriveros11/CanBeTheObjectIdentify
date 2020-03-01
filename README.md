@@ -21,7 +21,7 @@ Almost there!!! Now, you need to have a Mongo database to connect.
 
 ### Windows
 
-### Linux
+### Ubuntu
 You can dowload docker for [here](https://docs.docker.com/install/linux/docker-ce/ubuntu/).
 After dowloaning docker, run the next command:
 ```
