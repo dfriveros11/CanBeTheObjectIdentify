@@ -1,4 +1,4 @@
-# CanBeTheObjectIdentify  :boom:
+# Can Be The Object Identify?  :boom:
 ## Description
 
 We wanted to do a game in which the people have an approcha with image classification. People can put different objects to the webcam and check if is detect or not. 
