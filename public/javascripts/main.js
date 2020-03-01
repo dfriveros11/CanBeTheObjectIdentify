@@ -36,12 +36,12 @@ async function startGame() {
       document.getElementById("main").appendChild(image);
     }, 2000);
 
-    /*  setTimeout(function() {
-    const image = document.createElement("img");
-    image.setAttribute("src", images[3]);
-    document.getElementById("main").innerHTML = "";
-    document.getElementById("main").appendChild(image);
-  }, 3000);*/
+    setTimeout(function() {
+      const image = document.createElement("img");
+      image.setAttribute("src", images[3]);
+      document.getElementById("main").innerHTML = "";
+      document.getElementById("main").appendChild(image);
+    }, 3000);
 
     //Start the game
     setTimeout(function() {
@@ -75,6 +75,7 @@ async function startGame() {
 async function getVideo() {
   this.videoElement = document.querySelector("video");
   this.snapShotCanvas = document.createElement("canvas");
+  console.log("VIDEO", this.videoElement.videoWidth);
   if (
     navigator.mediaDevices.getUserMedia ||
     navigator.mediaDevices.webkitGetUserMedia
@@ -88,7 +89,7 @@ async function getVideo() {
 
     const loadDataPromise = new Promise(resolve => {
       this.videoElement.onloadedmetadata = () => {
-        resolve();
+        resolve([this.videoElement.videoWidth, this.videoElement.videoHeight]);
       };
     });
 
@@ -97,6 +98,9 @@ async function getVideo() {
 
     this.videoElement.setAttribute("ref", "{this.videoElement}");
     const div = document.getElementById("root");
+    //Set canvas atributtes and width and Height
+    this.snapShotCanvas.width = window.innerWidth;
+    this.snapShotCanvas.height = window.innerHeight;
     this.snapShotCanvas.setAttribute("class", "showvideo");
     this.snapShotCanvas.setAttribute("ref", "{this.snapShotCanvas}");
     div.appendChild(this.snapShotCanvas);
