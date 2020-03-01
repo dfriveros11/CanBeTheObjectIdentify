@@ -5,18 +5,29 @@ We wanted to do a game in which the people have an approcha with image classific
 
 ## Authors
 
-[Diego Riveros](https://dfriveros11.github.io/DiegoRiverosWebPage/)
-[Laura Pardo](https://laupardo.github.io/index.html)
+- [Diego Riveros](https://dfriveros11.github.io/DiegoRiverosWebPage/)
+- [Laura Pardo](https://laupardo.github.io/index.html)
+
+## Check the page
+[Link]()
+
+## Deployment
+
+### Windows
+
+### Linux
+
+## GIF
 
 ## Used technologies
 
-HTML
-CSS
-Bootsrap 
-Javascript
-TensorFlow.js
-MongoDB
-Docker
+- HTML
+- CSS
+- Bootsrap 
+- Javascript
+- TensorFlow.js
+- MongoDB
+- Docker
 
 # MIT License 
 This project is licensed by the MIT [License](https://github.com/dfriveros11/CanBeTheObjectIdentify/edit/master/LICENSE.md).
