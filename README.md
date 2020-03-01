@@ -9,7 +9,7 @@ We wanted to do a game in which the people have an approcha with image classific
 - [Laura Pardo](https://laupardo.github.io/index.html)   :girl:
 
 ## Check the page  :sunglasses:
-[Link]()
+[Link](https://canbetheobjectidentify.herokuapp.com/)
 
 ## Deployment
 To deploy the page locally, it's neccesary to clone or download the repository. To run this repository is neccesary to install npm and yarn. Then, run the following command:
