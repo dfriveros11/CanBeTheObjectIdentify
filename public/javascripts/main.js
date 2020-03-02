@@ -201,19 +201,6 @@ const renderScores = data => {
   });
 };
 
-// const int = setInterval(() => {
-//   fetch("./getUsers")
-//     .then(res => res.json())
-//     .then(renderScores)
-//     .catch(() => {
-//       const div = document.createElement("div");
-//       div.className = "alert alert-danger";
-//       div.textContent = "Error downloading data";
-//       document.getElementById("main").append(div);
-//       clearInterval(int);
-//     });
-// }, 10000);
-
 //server side rendering
 const int = setInterval(() => {
   console.log("Entre");
