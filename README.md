@@ -32,14 +32,17 @@ Almost there!!!.
 ### Windows
 Set your environment variables to be the admin and password
 ```
-MONGO_USER=admin
-MONGO_PWD=secret
+SET MONGO_USER=admin
+SET MONGO_PWD=secret
 ```
 Go to where you intsalled mongo (eg.)
 ```
 C:\Program Files\MongoDB\Server\3.2\bin>
 ```
-Enter command mongod
+The, enter command
+```
+mongod
+```
 then go to you folder where the app is and 
 ```
 yarn start
