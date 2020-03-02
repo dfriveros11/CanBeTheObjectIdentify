@@ -39,7 +39,7 @@ Go to where you intsalled mongo (eg.)
 ```
 C:\Program Files\MongoDB\Server\3.2\bin>
 ```
-The, enter command
+Enter command
 ```
 mongod
 ```
