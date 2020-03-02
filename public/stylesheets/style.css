@@ -20,6 +20,10 @@ h2, h4{
   color: white;
 }
 
+li {
+  color: black;
+}
+
 img {
   /* Rellenamos el fondo */
   min-height: 100%;

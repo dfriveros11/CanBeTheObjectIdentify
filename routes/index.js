@@ -39,44 +39,45 @@ router.get("/getUsersSS", function(req, res) {
   mu.connect()
     .then(mu.users.find)
     .then(users => {
-      res.send(`
-        
+      res.send(`  
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="utf-8" />
+        <meta name="author" content="Diego Riveros & Laura Pardo" />
+        <meta name="description" content="Prueba TensorFLowjs" />
+        <meta
+          name="keywords"
+          content="HTML,CSS, Bootstrap, JavaScript, TensorFLow.js, MongoDB "
+        />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="author" content="Diego Riveros & Laura Pardo" />
-    <meta name="description" content="La pagina web de Diego Riveros" />
-    <meta name="keywords" content="HTML,CSS,JavaScript" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-
-    <title>TensorFlow.js OBD Demo</title>
-    <link href="/public/stylesheets/style.css" rel="stylesheet" />
-    <!-- Load TensorFlow.js-->
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-    <!-- Load the coco-ssd model. -->
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
-    <script src="./javascripts/main.js" type="text/javascript"></script>
-  </head>
-  <body>
-  <div class="container">
-   <div class="text-center">
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous"
+        />
+        <link rel="shortcut icon" href="./images/favicon.ico" />
+        <title>Can the object be identified by our super AI?</title>
+        <link href="/stylesheets/style.css" type="text/css" rel="stylesheet" />
+        <!-- Load TensorFlow.js-->
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+        <!-- Load the coco-ssd model. -->
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+        <script src="./javascripts/signUpForm.js" type="text/javascript"></script>
+      </head>
+      <body>
+        <div class="container">
         <h1 class="text-center">ScoreBoard<h1>
         <ul class="list-group">
         ${users
           .map(
-            u => `<li class="list-group-item">  ${u.userName}  ${u.score} points</li>`
+            u =>
+              `<li class="list-group-item">  ${u.userName}  ${u.score} points</li>`
           )
           .join("")}
         </ul>
