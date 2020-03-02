@@ -76,7 +76,7 @@ yarn start
 ```
 
 ## GIF
-![](gif.gif)
+![](https://media.giphy.com/media/hVmqHPv6Ha4ek0g44A/giphy.gif)
 ## Used technologies
 
 - HTML
