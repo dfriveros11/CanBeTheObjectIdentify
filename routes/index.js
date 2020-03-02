@@ -72,6 +72,7 @@ router.get("/getUsersSS", function(req, res) {
       </head>
       <body>
         <div class="container">
+        <div class="text-center">
         <h1 class="text-center">ScoreBoard<h1>
         <ul class="list-group">
         ${users
@@ -84,6 +85,7 @@ router.get("/getUsersSS", function(req, res) {
         <button class="btn btn-primary btn-lg active">
           <a href="index.html">Back</a>
         </button>
+        </div>
         </div>
       </div>
     <!-- Optional JavaScript -->
