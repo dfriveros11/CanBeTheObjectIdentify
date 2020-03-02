@@ -61,7 +61,6 @@ router.get("/getUsersSS", function(req, res) {
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
           crossorigin="anonymous"
         />
-
         <link rel="shortcut icon" href="./images/favicon.ico" />
         <title>Can the object be identified by our super AI?</title>
         <link href="/stylesheets/style.css" type="text/css" rel="stylesheet" />
@@ -77,7 +76,8 @@ router.get("/getUsersSS", function(req, res) {
         <ul class="list-group">
         ${users
           .map(
-            u => `<li class="list-group-item">  ${u.userName}  ${u.score}</li>`
+            u =>
+              `<li class="list-group-item">  ${u.userName}  ${u.score} points</li>`
           )
           .join("")}
         </ul>
@@ -85,7 +85,7 @@ router.get("/getUsersSS", function(req, res) {
           <a href="index.html">Back</a>
         </button>
         </div>
-
+      </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
