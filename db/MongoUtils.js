@@ -6,8 +6,8 @@ function MongoUtils() {
 
   let hostname = "localhost",
     port = 27017,
-    dbName = "some-mongo",
-    colName = "users";
+    dbName = "heroku_3lrh51h6",
+    colName = "some-mongo";
 
   const user = process.env.MONGO_USER,
     pwd = process.env.MONGO_PWD;
@@ -28,7 +28,7 @@ function MongoUtils() {
       url = `mongodb://${user}:${pwd}@${hostname}:${port}`;
     }
     console.log(url);
-    const cliente = new MongoClient(url, { useUnifiedTopology: true });
+    const cliente = new MongoClient(url);
     console.log("Connected");
     return cliente.connect();
   };
