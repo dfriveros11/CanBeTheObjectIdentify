@@ -5,7 +5,7 @@ const MongoUtils = require("../db/MongoUtils.js");
 const mu = MongoUtils();
 
 /* GET home page. */
-router.get("/getTest", function(req, res, next) {
+router.get("/getTest", function(req, res) {
   console.log("Try to connect to Mongo");
 
   mu.connect()
@@ -26,7 +26,7 @@ router.post("/signUp", (req, res) => {
     .catch(err => console.log(err));
 });
 
-router.get("/getUsers", function(req, res, next) {
+router.get("/getUsers", function(req, res) {
   mu.connect()
     .then(mu.users.find)
     .then(users => {
@@ -35,7 +35,7 @@ router.get("/getUsers", function(req, res, next) {
     .catch(err => console.log(err));
 });
 
-router.get("/getUsersSS", function(req, res, next) {
+router.get("/getUsersSS", function(req, res) {
   mu.connect()
     .then(mu.users.find)
     .then(users => {
@@ -55,7 +55,7 @@ router.get("/getUsersSS", function(req, res, next) {
     .catch(err => console.log(err));
 });
 
-router.post("/getUser", function(req, res, next) {
+router.post("/getUser", function(req, res) {
   console.log(req.body.nameValue);
   mu.users
     .findUser(nameValue)
@@ -63,7 +63,7 @@ router.post("/getUser", function(req, res, next) {
     .catch(err => console.log(err));
 });
 
-router.get("/updateScore", function(req, res, next) {
+router.get("/updateScore", function(req, res) {
   const userName = "two";
   const newScore = 3;
   mu.users

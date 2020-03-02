@@ -23,7 +23,7 @@ function MongoUtils() {
     console.log("Trying to connect");
     let url;
     if (user === undefined) {
-      url = process.env.MONGODB_URI;
+      url = process.env.MONGODB_URI + "?authMode=scram-sha1";
     } else {
       url = `mongodb://${user}:${pwd}@${hostname}:${port}`;
     }
@@ -79,11 +79,4 @@ function MongoUtils() {
   return mu;
 }
 const mu = MongoUtils();
-
-mu.connect()
-  .then(client => mu.getTest(client))
-  .then(docs => {
-    console.log("FUNCIONO", docs.length);
-  })
-  .catch(err => console.log(err));
 module.exports = MongoUtils;
