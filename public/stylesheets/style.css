@@ -38,7 +38,7 @@ img {
 
 .showvideo {
   /* Posicionamiento */
-  /*position:;*/
+  position:fixed;
   top: 20%;
   left: 35%;
 }
