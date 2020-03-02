@@ -51,7 +51,7 @@ yarn start
 ```
 
 ## GIF
-
+![](gif.gif)
 ## Used technologies
 
 - HTML
