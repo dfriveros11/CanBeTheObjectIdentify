@@ -52,7 +52,7 @@ Enter command
 ```
 mongo
 ```
-Then, go to you folder where the app is and
+Then open a new cmd and go to you folder where the app is and
 ```
 yarn start
 ```
