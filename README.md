@@ -30,7 +30,20 @@ Enter in the root folder of the proyect and run the following commands:
 Almost there!!!.
 
 ### Windows
-
+Set your environment variables to be the admin and password
+```
+MONGO_USER=admin
+MONGO_PWD=secret
+```
+Go to where you intsalled mongo (eg.)
+```
+C:\Program Files\MongoDB\Server\3.2\bin>
+```
+Enter command mongod
+then go to you folder where the app is and 
+```
+yarn start
+```
 ### Ubuntu
 Create the image to mongodb with the name some-mongo with user mongoadmin and password secret:
 ```
