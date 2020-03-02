@@ -30,7 +30,16 @@ Enter in the root folder of the proyect and run the following commands:
 Almost there!!!.
 
 ### Windows
-Set your environment variables to be the admin and password
+Go to where you intsalled mongo (eg.)
+```
+C:\Program Files\MongoDB\Server\3.2\bin>
+```
+Enter command
+```
+mongod
+```
+Then, open a new cmd and set your environment variables to be the admin and password
+
 ```
 SET MONGO_USER=admin
 SET MONGO_PWD=secret
@@ -41,9 +50,9 @@ C:\Program Files\MongoDB\Server\3.2\bin>
 ```
 Enter command
 ```
-mongod
+mongo
 ```
-Then, go to you folder where the app is and 
+Then, go to you folder where the app is and
 ```
 yarn start
 ```
