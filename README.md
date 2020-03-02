@@ -43,7 +43,7 @@ Enter command
 ```
 mongod
 ```
-then go to you folder where the app is and 
+Then, go to you folder where the app is and 
 ```
 yarn start
 ```
