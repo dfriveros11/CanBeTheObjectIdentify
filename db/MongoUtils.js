@@ -21,7 +21,12 @@ function MongoUtils() {
 
   mu.connect = () => {
     console.log("Trying to connect");
-    const url = `mongodb://${user}:${pwd}@${hostname}:${port}`;
+    let url;
+    if (user === undefined) {
+      url = process.env.MONGODB_URI;
+    } else {
+      url = `mongodb://${user}:${pwd}@${hostname}:${port}`;
+    }
     console.log(url);
     const cliente = new MongoClient(url, { useUnifiedTopology: true });
     console.log("Connected");
