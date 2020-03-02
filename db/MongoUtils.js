@@ -6,7 +6,8 @@ function MongoUtils() {
 
   let hostname = "localhost",
     port = 27017,
-    dbName = "some-mongo";
+    dbName = "some-mongo",
+    colName = "users";
 
   const user = process.env.MONGO_USER,
     pwd = process.env.MONGO_PWD;
@@ -36,6 +37,39 @@ function MongoUtils() {
       .toArray()
       .finally(() => client.close());
   };
+
+  mu.users = {};
+
+  mu.users.findUser = userName =>
+    mu.connect().then(client => {
+      const usersC = client.db(dbName).collection(colName);
+      // when searching by id we need to create an ObjectID
+      return usersC
+        .findOne({ userName: userName })
+        .finally(() => client.close());
+    });
+
+  mu.users.insertUser = user =>
+    mu.connect().then(client => {
+      const usersC = client.db(dbName).collection(colName);
+      return usersC.insertOne(user).finally(() => client.close());
+    });
+
+  mu.users.find = client => {
+    const usersC = client.db(dbName).collection(colName);
+    return usersC
+      .find()
+      .sort({ score: -1 })
+      .toArray();
+  };
+
+  mu.users.updateScore = (userName, newScore) =>
+    mu.connect().then(client => {
+      const usersC = client.db(dbName).collection(colName);
+      return usersC
+        .updateOne({ userName: userName }, { $set: { score: newScore } })
+        .finally(() => client.close());
+    });
 
   return mu;
 }

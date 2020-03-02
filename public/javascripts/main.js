@@ -8,6 +8,9 @@ const images = [
 
 async function startGame() {
   try {
+    setTimeout(function() {}, 500);
+    const pat = document.getElementById("patienceMsg");
+    pat.removeAttribute("style");
     let camera = await getVideo();
 
     let timeOUT = 1000;
@@ -15,7 +18,11 @@ async function startGame() {
 
     const image = document.createElement("img");
     image.setAttribute("className", "images");
-
+    setTimeout(function() {
+      image.setAttribute("src", images[0]);
+      document.getElementById("main").innerHTML = "";
+      document.getElementById("main").appendChild(image);
+    }, timeOUT + 1000);
     //Change images every second
     setTimeout(function() {
       image.setAttribute("src", images[0]);
@@ -43,6 +50,10 @@ async function startGame() {
       //eliminar el div
       const removeDiv = document.getElementById("main");
       removeDiv.remove();
+      const removePatience = document.getElementById("patienceMsg");
+      removePatience.remove();
+      const but = document.getElementById("scoreButDiv");
+      but.removeAttribute("style");
     }, timeOUT + 5000);
   } catch (error) {
     intentos++;
@@ -51,7 +62,10 @@ async function startGame() {
       const alert = document.createElement("div");
       alert.setAttribute("class", "alert alert-danger");
       alert.setAttribute("role", "alert");
-      alert.textContent = "It's neccesary the camera to play the game";
+      alert.textContent =
+        "It's neccesary to enable your camera in order to play the game";
+      const removePatience = document.getElementById("patienceMsg");
+      removePatience.remove();
       document.getElementById("main").appendChild(alert);
     } else if (intentos == 2) {
       const alert = document.createElement("div");
@@ -175,4 +189,41 @@ function showDetections(predictions) {
     /*    Draw the percentage of the prediction exactitud
     ctx.fillText(prediction.score.toFixed(2), x, y + height - textHeight);*/
   });
+}
+
+const renderScores = data => {
+  const target = document.getElementById("main");
+  data.forEach(user => {
+    const div = document.createElement("div");
+    div.textContent = `${user.userName} ${user.score}`;
+    target.append(div);
+  });
+};
+
+// const int = setInterval(() => {
+//   fetch("./getUsers")
+//     .then(res => res.json())
+//     .then(renderScores)
+//     .catch(() => {
+//       const div = document.createElement("div");
+//       div.className = "alert alert-danger";
+//       div.textContent = "Error downloading data";
+//       document.getElementById("main").append(div);
+//       clearInterval(int);
+//     });
+// }, 10000);
+
+//server side rendering
+const int = setInterval(() => {
+  fetch("./getUsersSS").catch(() => {
+    const div = document.createElement("div");
+    div.className = "alert alert-danger";
+    div.textContent = "Error downloading data";
+    document.getElementById("main").append(div);
+    clearInterval(int);
+  });
+}, 10000);
+
+function toScoreBoard() {
+  window.location.href = "/getUsersSS";
 }

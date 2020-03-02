@@ -17,7 +17,7 @@
       crossorigin="anonymous"
     />
 
-    <title>TensorFlow.js OBD Demo</title>
+    <title>Can the object be identified by our super AI?</title>
     <link href="./stylesheets/style.css" rel="stylesheet" />
     <!-- Load TensorFlow.js-->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
@@ -29,21 +29,47 @@
 
   <body>
     <div class="container">
-      <div id="root" style="visibility: hidden">
+      <div id="root" style="visibility: hidden" class="text-center">
         <video class="showvideo" autoplay="true" />
       </div>
-
       <!-- Aqui se va a remplazar todo-->
-      <div id="main">
-        <h1>Demo of TensorFlow.js Coco SSD's model object detection</h1>
-
-        <button
-          type="button"
-          class="btn btn-primary btn-lg active"
-          onclick="startGame()"
-        >
-          Let's Play
+      <div id="main" class="text-center">
+        <h1 class="text-center">
+          Can the object be identified by our super AI?
+        </h1>
+        <div>
+          <button
+            type="button"
+            class="btn btn-primary btn-lg active"
+            onclick="startGame()"
+          >
+            Let's Play
+          </button>
+        </div>
+        <div>
+          <button
+            type="button"
+            id="scoreButton"
+            class="btn btn-primary btn-lg active"
+            onclick="toScoreBoard()"
+          >
+            Take a look at the recent scores
+          </button>
+        </div>
+      </div>
+      <div id="patienceMsg" class="text-center" style="visibility: hidden">
+        <h2 class="text-center">
+          Please be patient. Loading may take a while.
+        </h2>
+      </div>
+      <div class="text-center" style="visibility: hidden" id="scoreButDiv">
+        <button type="button" class="btn btn-primary btn-lg active">
+          <a href="recordScore.html">Record your score!</a>
         </button>
+        <h4>
+          Place objects in front of your camera. If they don't get recognized
+          properly, you earn a point!
+        </h4>
       </div>
     </div>
 

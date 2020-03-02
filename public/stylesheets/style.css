@@ -33,3 +33,14 @@ img {
   top: 20%;
   left: 20%;
 }
+a {
+  color: white;
+}
+a:hover {
+  color: white;
+}
+
+#scoreButton {
+  background-color: #21825C;
+  outline-color: #21825C: 
+}
