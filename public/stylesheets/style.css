@@ -29,7 +29,7 @@ img {
 
 .showvideo {
   /* Posicionamiento */
-  position: fixed;
+  /*position:;*/
   top: 20%;
   left: 20%;
 }
@@ -42,5 +42,10 @@ a:hover {
 
 #scoreButton {
   background-color: #21825C;
-  outline-color: #21825C: 
+  outline-color:#21825C: 
+  margin-bottom:1vw;
+}
+
+#scoreCard {
+  margin-top: 15vw;
 }

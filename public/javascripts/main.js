@@ -10,6 +10,7 @@ async function startGame() {
   try {
     setTimeout(function() {}, 500);
     const pat = document.getElementById("patienceMsg");
+    document.getElementById("main").innerHTML = "";
     pat.removeAttribute("style");
     let camera = await getVideo();
 
@@ -215,6 +216,7 @@ const renderScores = data => {
 
 //server side rendering
 const int = setInterval(() => {
+  console.log("Entre");
   fetch("./getUsersSS").catch(() => {
     const div = document.createElement("div");
     div.className = "alert alert-danger";
