@@ -12,7 +12,11 @@ a:hover {
   color: white;
 }
 
-h1, h2, h4{
+#jumboh1{
+  color:black;
+}
+
+h2, h4{
   color: white;
 }
 
@@ -61,3 +65,4 @@ img {
 #scoreCard {
   margin-top: 15vw;
 }
+
