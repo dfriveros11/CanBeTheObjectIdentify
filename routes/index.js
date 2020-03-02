@@ -71,11 +71,12 @@ router.get("/getUsersSS", function(req, res) {
   </head>
   <body>
   <div class="container">
+   <div class="text-center">
         <h1 class="text-center">ScoreBoard<h1>
         <ul class="list-group">
         ${users
           .map(
-            u => `<li class="list-group-item">  ${u.userName}  ${u.score}</li>`
+            u => `<li class="list-group-item">  ${u.userName}  ${u.score} points</li>`
           )
           .join("")}
         </ul>
@@ -83,7 +84,7 @@ router.get("/getUsersSS", function(req, res) {
           <a href="index.html">Back</a>
         </button>
         </div>
-
+      </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
