@@ -12,7 +12,8 @@ router.get("/getTest", function(req, res) {
     .then(mu.getTest)
     .then(res.json);
 });
-
+//Hubiese sido bueno, pero trabajoso que utilizaran algun sistema de autenticación para que un mismo usuario no ponga su score mil veces, sino que se reemplace el mejor del usuario.
+//aunque es interesante que antes se usaban así en las consolas de salas de juego. Chevere.
 router.post("/signUp", (req, res) => {
   const user = {
     userName: req.body.nameValue,
@@ -25,7 +26,8 @@ router.post("/signUp", (req, res) => {
     .then(res.redirect("/getUsers"))
     .catch(err => console.log(err));
 });
-
+ //En cuanto a los métodos, hubiese sido util que el connect fuese manejado desde el archivo de la base de datos.
+// es mucho mejor para no tener código repetido y mejorar el mantenimiento del código.
 router.get("/getUsers", function(req, res) {
   mu.connect()
     .then(mu.users.find)
