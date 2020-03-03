@@ -4,6 +4,8 @@ const MongoClient = require("mongodb").MongoClient;
 function MongoUtils() {
   const mu = {};
 
+  //No es recomendable mostrar ninguna credencial al repositorio. Tengo entendido que el uso de dotenv es preferiblemente para uso de desarrollo.
+  //En el caso de Heroku todas estas variables se pueden agregar al ambiente del servidor (en el app.json)
   let hostname = "localhost",
     port = 27017,
     dbName = "heroku_3lrh51h6",
@@ -19,6 +21,7 @@ function MongoUtils() {
     _hostName !== undefined ? ((hostname = _hostName), mu) : hostname;
   mu.port = _port => (_port !== undefined ? ((port = _port), mu) : port);
 
+ //Acá dejaron imprimiendo en consola las credenciales.
   mu.connect = () => {
     console.log("Trying to connect");
     let url;
@@ -60,6 +63,7 @@ function MongoUtils() {
       return usersC.insertOne(user).finally(() => client.close());
     });
 
+  //En este método se les olvidó cerrar el cliente. Esto puede crear mal uso de los recursos.
   mu.users.find = client => {
     const usersC = client.db(dbName).collection(colName);
     return usersC
