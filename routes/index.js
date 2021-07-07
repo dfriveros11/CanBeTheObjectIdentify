@@ -4,6 +4,18 @@ var router = express.Router();
 const MongoUtils = require("../db/MongoUtils.js");
 const mu = MongoUtils();
 
+/* Comentario Juan Felipe Torres: no vi ninguno res.render() sino un res.send(). Se recomendaría utilizar la primera oción para no tener 
+que meter todo un html en el send, mejor definir un archivo html aparte para renderizar el contenido 
+Sería algo del tipo:
+router.get("/ruta", function(req, res) {
+  mu.connect()
+  .then(mu.get(test))
+  .then(res.render("test": test);
+});
+*/
+
+
+
 /* GET home page. */
 router.get("/getTest", function(req, res) {
   console.log("Try to connect to Mongo");
