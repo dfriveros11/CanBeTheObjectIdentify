@@ -1,5 +1,8 @@
 const MongoClient = require("mongodb").MongoClient;
 
+//Comentario Juan Felipe Torres: Me gustó el hecho de que tengan su user y password de la base de datos estén en variables de entorno, 
+// es seguro y se ve bien.
+
 //Connect to mongo
 function MongoUtils() {
   const mu = {};
